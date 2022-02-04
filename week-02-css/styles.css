@@ -1,4 +1,4 @@
-
+/* Element selector that gives every p element a monospace font. */
 p {
   font-family: 'Alegreya Sans', sans-serif;
   font-size: 2.5vw;
@@ -18,6 +18,17 @@ p {
   border-left-style: hidden;
   border-width: 0px, 0px, 3px, 0px;
   text-shadow: 3px 3px 3px #577590;
+}
+
+#out2
+{
+  border-top-style: hidden;
+  border-bottom-style: dotted;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-width: 0px, 0px, 3px, 0px;
+  text-shadow: 3px 3px 3px #577590;
+  color: #B4E1FF;
 }
 
 #outi{
@@ -54,7 +65,7 @@ h2{
 }
 
 
-#pink {
+#blue {
   color: #B4E1FF;
   font-size: 3vw;
   font-style: italic;
