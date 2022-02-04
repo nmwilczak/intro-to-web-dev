@@ -1,15 +1,115 @@
 /* Element selector that gives every p element a monospace font. */
 p {
-  font-family: monospace;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 2.5vw;
+}
+
+
+.love
+{
+  color: #CDACA1;
+}
+
+#out
+{
+  border-top-style: hidden;
+  border-bottom-style: dotted;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-width: 0px, 0px, 3px, 0px;
+  text-shadow: 3px 3px 3px #577590;
+}
+
+#outi{
+  border-top-style: hidden;
+  border-bottom-style: dotted;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-width: 0px, 0px, 3px, 0px;
+  font-style: italic;
+  text-shadow: 3px 3px 3px #577590;
+}
+
+
+
+
+
+
+h1{
+  font-family: 'Arizonia', cursive;
+  font-size: 4vw;
+  color: #31263E;
+}
+
+h2{
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 2.5vw;
 }
 
 /* Class selector that gives elements with this class a big bold style. */
-.big {
-  font-size: large;
+.bold {
+  font-size: 2.5vw;
   font-weight: bold;
+  font-style: italic;
 }
 
-/* ID selector that gives the element with this ID a red style. */
-#boldly {
-  color: red;
+
+#pink {
+  color: #B4E1FF;
+  font-size: 3vw;
+  font-style: italic;
 }
+
+
+.backs {
+  background-size: 150px;
+  background-repeat: round;
+  background-image:
+    url(/images/back.png);
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 52%;
+  transform: translate(-50%, -20%);
+}
+
+
+
+.top {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -200%);
+}
+
+
+#full-screen-background-image {
+  z-index: -999;
+  min-height: 100%;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+img {
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@keyframes fadeIn { 
+  from { opacity: 0; } 
+}
+
+.fadeIn {
+    animation: fadeIn 3s infinite alternate;
+}
+
