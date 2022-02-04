@@ -95,6 +95,10 @@ h2{
   transform: translate(-50%, -200%);
 }
 
+.ls{
+  letter-spacing: 4px;
+}
+
 
 #full-screen-background-image {
   z-index: -999;
