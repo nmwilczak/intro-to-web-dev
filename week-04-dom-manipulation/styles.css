@@ -4,5 +4,58 @@
 }
 
 #adjective-one-output {
-  font-weight: bold;
+  color: darkred;
 }
+
+
+#samename-one-output {
+  color: darkred;
+}
+
+
+#location-one-output {
+  color: darkred;
+}
+
+
+#p-one-output {
+  color: darkred;
+}
+
+
+#noun-one-output {
+  color: darkred;
+}
+
+
+
+
+#noun2-one-output {
+  color: darkred;
+}
+
+
+
+
+body{
+  background-color: skyblue;
+}
+
+
+h1{
+
+  font-family: 'Balsamiq Sans', cursive;
+
+}
+
+h3{
+  font-family: 'Indie Flower', cursive;
+
+}
+
+h4{
+  font-family: 'Balsamiq Sans', cursive;
+  font-weight: 700;
+
+}
+

@@ -1,17 +1,94 @@
 <!DOCTYPE html>
 <html>
+
+
   <head>
-    <title>Home</title>
+
+    <title>Mad Libs</title>
+
+
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="script.js"></script>
-  </head>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Indie+Flower&display=swap" rel="stylesheet">
+
+</head>
+
   <body>
+
     <div id="inputs">
-      <div>Give me an adjective: <input id="adjective-one-input" /></div>
+
+      <div> <h4>Give me a name: </h4><input id="adjective-one-input" /></div>
+
+
+      <div> <h4>Give me the same name: </h4><input id="samename-one-input" /></div>
+
+
+
+       <div> <h4>Give me a location: </h4><input id="location-one-input" /></div>
+
+
+
+        <div> <h4>Give me a possesive name: </h4><input id="p-one-input" /></div>
+
+
+        <div> <h4>Give me a noun: </h4><input id="noun-one-input" /></div>
+
+
+        <div> <h4>Give me a noun: </h4><input id="noun2-one-input" /></div>
+
+<br>
+<br>
+<br>
+
       <button onclick="fillOutputs();">Done</button>
+
+
+
     </div>
+
+
+
+
+
+
+
+
+    
+<h1> Your Story </h1>
+
     <div id="output">
-      The <span id="adjective-one-output"></span> fox jumped over the lazy dog.
+      <h3>This is a story about <span id="adjective-one-output"></span> .
+
+
+       <span id="samename-one-output"></span> lives in a trailer next to the 
+
+
+
+        <span id="location-one-output"></span> next to 
+
+
+
+        <span id="p-one-output"></span> house.
+
+
+        Ocassionally they'll wave at you on their way out to get the <span id="noun-one-output"></span> 
+    
+
+
+       or some <span id="noun2-one-output"></span> for the Angels. </h3>
+    
+    
+
     </div>
+
+
   </body>
+
+
+
+
 </html>
