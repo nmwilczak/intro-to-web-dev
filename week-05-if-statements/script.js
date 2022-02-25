@@ -6,14 +6,14 @@ function submitAnswerOne() {
   // Get the text from answer one's input element
   const answerOne = answerOneInput.value;
 
-  if(answerOne == 'cat') {
+  if(answerOne == 'meerkat') {
     alert("That's right!");
     hide('question-one');
     show('question-two');
-  } else if(answerOne == 'dog') {
-    alert('Close, but my favorite animal runs away from dogs.');
+  } else if(answerOne == 'prairie dog') {
+    alert('Not Quite: It has the word "kat" in it.');
   } else {
-    alert('Wrong! Hint: My favorite animal meows.')
+    alert('Wrong! Hint: The name of the animal starts with an m and is seven letters long.')
   }
 }
 
@@ -25,16 +25,74 @@ function submitAnswerTwo() {
   // Get the number from answer two's input element
   const answerTwo = answerTwoInput.value;
 
-  if(answerTwo == 42) {
+  if(answerTwo == 1982) {
     alert("That's right!");
     hide('question-two');
-    show('done');
-  } else if(answerTwo < 42) {
+    show('question-three');
+  } else if(answerTwo < 1982) {
     alert('The answer is higher.');
   } else {
     alert('The answer is lower.')
   }
 }
+
+
+
+function submitAnswerThree() {
+  const answerThreeInput = document.getElementById('answer-three-input');
+  const answerThree = answerThreeInput.value;
+
+  if(answerThree == 'Go Away Green') {
+    alert("That's right!");
+    hide('question-three');
+    show('question-four');
+   
+ } else if(answerThree == 'Light Green') {
+    alert('Close, it is a light shade of green.');
+  } else {
+    alert('Wrong! Hint: Three words, __  ____ Green')
+  }
+}
+
+
+
+function submitAnswerFour() {
+  const answerFourInput = document.getElementById('answer-four-input');
+  const answerFour = answerFourInput.value;
+
+  if(answerFour == 24) {
+    alert("That's right!");
+    hide('question-four');
+    show('question-five');
+  } else if(answerFour < 24) {
+    alert('The answer is higher.');
+  } else {
+    alert('The answer is lower.')
+  }
+}
+
+
+function submitAnswerFive() {
+  const answerFiveInput = document.getElementById('answer-five-input');
+  const answerFive = answerFiveInput.value;
+
+  if(answerFive == 'Staples') {
+    alert("That's right!");
+    hide('question-five');
+    show('done');
+   
+ } else if(answerFive == 'Office Max') {
+    alert('Not Quite: The company you are looking for is number one in the U.S. in terms of office supplies.');
+  } else {
+    alert('Wrong! Hint: Starts with an S')
+  }
+}
+
+
+
+
+
+
 
 // Helper function that takes an ID and shows the element with that ID.
 function show(id) {

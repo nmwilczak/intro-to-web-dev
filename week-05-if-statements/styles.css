@@ -2,6 +2,33 @@
   display: none;
 }
 
+#question-three {
+  display: none;
+}
+
+#question-four {
+  display: none;
+}
+
+#question-five {
+  display: none;
+}
+
+
 #done {
   display: none;
+}
+
+body{
+  background-color: #D5DCF9;
+}
+
+h1{
+
+font-family: 'Julius Sans One', sans-serif;
+font-size: 3vw;
+}
+
+h2{
+    font-family: 'Josefin Slab', serif;
 }
