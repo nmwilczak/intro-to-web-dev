@@ -56,9 +56,9 @@ function draw() {
 
 
      noStroke();
-  fill(244, 122, 158);
+  fill(209, 209, 209);
   ellipse(cx, cy, clockDiameter + 25, clockDiameter + 25);
-  fill(237, 34, 93);
+  fill(255, 168, 130);
   ellipse(cx, cy, clockDiameter, clockDiameter);
 
   // Angles for sin() and cos() start at 3 o'clock;
