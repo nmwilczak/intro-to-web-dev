@@ -1,27 +1,38 @@
 // Array of objects representing a todo list.
 // Modify this array to contain your own list.
-const taskArray = [
-  {label: 'Water plants', time: 3},
-  {label: 'Homework', time: 2},
-  {label: 'Laundry', time: 1},
+const songArray = [
+  {name: 'Regular (English Version)', artist: 'NCT 127', time: 3.63},
+  {name: 'Ruby', artist: 'Woozi', time: 2.72},
+  {name: 'Im Gonna Love You', artist: 'D.O. ft. Wonstein', time: 2.52},
+  {name: 'Waiting', artist: 'WOODZ', time: 3.12},
+  {name: '0X1=LOVESONG (I Know I Love You)', artist: 'TOMORROW X TOGETHER', time: 3.35},
+  {name: 'Zombie', artist: 'Day6', time: 3.47},
+  {name: 'You Calling My Name', artist: 'GOT7', time: 3.23},
+  {name: 'Valkyrie', artist: 'ONEUS', time: 3.45},
+  {name: 'Feel My Rhythm', artist: 'Red Velevet', time: 3.48},
+  {name: 'Feelin Like', artist: 'PENTAGON', time: 2.77},
+  {name: 'Tempo', artist: 'EXO', time: 3.72},
+
 ];
 
 // Loads the content into the page.
 function loadContent() {
   // This line of code sorts the array alphabetically by the task labels.
   // Modify this to sort your data by a different field, or just delete it.
-  taskArray.sort((a, b) => compare(a.label, b.label));
+  songArray.sort((a, b) => compare(a.name, b.name));
 
   loadTable();
-  loadShortestTask();
+  loadShortestSong();
+  loadAverage ();
 }
 
 // Adds a task to the array and reloads the page content.
-function addNewTask() {
-  const newTaskLabel = document.getElementById('label-input').value;
-  const newTaskTime = document.getElementById('time-input').value;
-  const newTask = {label: newTaskLabel, time: newTaskTime };
-  taskArray.push(newTask);
+function addNewSong() {
+  const newSongName = document.getElementById('name-input').value;
+  const newSongArtist = document.getElementById('artist-input').value;
+  const newSongTime = document.getElementById('time-input').value;
+  const newSong = {name: newSongName, artist: newSongArtist, time: newSongTime};
+  songArray.push(newSong);
 
   loadContent();
 }
@@ -33,17 +44,19 @@ function loadTable() {
   // Create a header row.
   const headerRowElement = document.createElement('tr');
   headerRowElement.appendChild(createElement('th', 'Index'));
-  headerRowElement.appendChild(createElement('th', 'Label'));
-  headerRowElement.appendChild(createElement('th', 'Time'));
+  headerRowElement.appendChild(createElement('th', 'Name'));
+  headerRowElement.appendChild(createElement('th', 'Artist'));
+  headerRowElement.appendChild(createElement('th', 'Length (Min)'));
   tableElement.appendChild(headerRowElement);
 
   // Iterate over the array and create a table row for each object.
-  for (let i = 0; i < taskArray.length; i++) {
-    const task = taskArray[i];
+  for (let i = 0; i < songArray.length; i++) {
+    const song = songArray[i];
     const rowElement = document.createElement('tr');
     rowElement.appendChild(createElement('td', i));
-    rowElement.appendChild(createElement('td', task.label));
-    rowElement.appendChild(createElement('td', task.time));
+    rowElement.appendChild(createElement('td', song.name));
+    rowElement.appendChild(createElement('td', song.artist));
+    rowElement.appendChild(createElement('td', song.time));
     tableElement.appendChild(rowElement);
   }
 
@@ -52,21 +65,37 @@ function loadTable() {
   tableContainer.appendChild(tableElement);
 }
 
-// Displays the name of the shortest task.
-function loadShortestTask(){
-  // Assume the first task is shortest
-  let shortestTask = taskArray[0];
+// Displays the name of the smallest mountain.
+function loadShortestSong(){
+  // Assume the first mountain is smallest
+  let shortestSong = songArray[0];
 
-  // Starting with the second task, look for a shorter task
-  for (let i = 1; i < taskArray.length; i++) {
-    const task = taskArray[i];
-    // If this task is shorter than the previous shortest, it's now the shortest
-    if(task.time < shortestTask.time) {
-      shortestTask = task;
+  // Starting with the second mountain, look for a smallet mountain
+  for (let i = 0; i < songArray.length; i++) {
+    const song = songArray[i];
+    // If this mountain is smallet than the previous smallest, it's now the smallest
+    if(song.time < shortestSong.time) {
+      shortestSong = song;
     }
   }
-  document.getElementById('shortest-task').innerText = shortestTask.label;
+  document.getElementById('shortest-song').innerText = shortestSong.name;
 }
+
+//average distance of hike on the mountains//
+function loadAverage (){
+  let total = 0;
+ for(let i = 0; i < songArray.length; i++){
+    console.log (total)
+   const song = songArray[i];
+    total += Number(song.time);
+
+ }
+  let average = total / songArray.length;
+  console.log (average);
+  document.getElementById('average-time').innerText = average
+  }
+
+
 
 // Helper function that creates an element that contains text content.
 function createElement(tag, text) {

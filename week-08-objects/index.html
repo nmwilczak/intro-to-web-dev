@@ -1,23 +1,81 @@
 <!DOCTYPE html>
+
 <html>
+
   <head>
-    <title>Task List</title>
+
+    <title>
+    
+    Songs I Recommend
+
+  </title>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Antic&family=Staatliches&family=Zen+Kaku+Gothic+Antique:wght@300;400;500&display=swap" rel="stylesheet">
+
+
     <link rel="stylesheet" type="text/css" href="styles.css">
+
+
     <script src="script.js"></script>
+
+
   </head>
+
+
   <body onload="loadContent();">
-    <h1>Task List</h1>
-    <div id="table-container"></div>
-    <hr>
-    <p>Shortest task: <span id="shortest-task"></span></p>
-    <hr>
-    <div>
-      <h1>New Task</h1>
-      Label: <input type="text" id="label-input"/>
-      <br><br>
-      Time: <input type="number" id="time-input" />
-      <br><br>
-      <button onclick="addNewTask();">Add</button>
+
+    <style> .content {
+    max-width: 600px;
+    margin: auto;}
+
+    </style>
+
+
+<div class="content">
+
+
+    <h1>K-Pop Songs I Recommend (ABC Order)</h1>
+
+
+    <div id="table-container">
+      
     </div>
+
+
+    <hr>
+
+    <h2>Shortest Song: <span id="shortest-song"></span>
+
+    </h2>
+
+    <hr>
+
+    <div>
+
+      <h1>New Song Addition</h1>
+
+     Song Title: <input type="text" id="name-input"/>
+      <br><br>
+
+
+      Song Artist: <input type="text" id="artist-input"/>
+      <br><br>
+
+      Song Length: <input type="number" id="time-input" />
+      <br><br>
+
+      <button onclick="addNewSong();">Add</button>
+
+       <h2> Average Song Length </h2>
+      <div id="average-time"></div>
+
+    </div>
+
+  </div>
+
   </body>
+
 </html>
