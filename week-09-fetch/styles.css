@@ -1,8 +1,32 @@
+
 #images {
   width: 500px;
-  border: thin solid black;
+  border: dotted orangered;
 }
 
 #images img {
   width: 100px;
+}
+
+h1{
+font-family: 'Send Flowers', cursive;
+  color: rebeccapurple;
+  text-align: center;
+  letter-spacing: 3vw;
+}
+
+h2{
+font-family: 'Rubik', sans-serif;
+  color: darkblue;
+
+}
+
+p{
+  font-family: 'Rubik', sans-serif;
+  color: purple;
+  text-align: center;
+}
+
+body{
+  background-color: lightblue;
 }

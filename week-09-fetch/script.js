@@ -1,6 +1,6 @@
 // Loads content for a Wikipedia article and displays it in the page.
 async function loadContent() {
-  const pageId = 'Cat';
+  const pageId = 'Sanrio';
   const response = await fetch(
     'https://en.wikipedia.org/w/api.php?' +
     'action=parse&formatversion=2&format=json&origin=*&page='
@@ -21,7 +21,10 @@ async function loadContent() {
     linksElement.appendChild(liElement);
   }
 
+
+  loadExternal(article.externallinks)
   loadImages(article.images);
+  loadLanguages(article.langlinks)
 }
 
 // Takes an array of image file names, uses the Wikipedia API to get the full
@@ -52,3 +55,52 @@ async function loadImages(images) {
       imagesContainer.appendChild(imageElement);
   }
 }
+
+
+async function loadExternal(externallinks){
+
+  const linksElement = document.getElementById('external');
+
+  for (const links of externallinks) {
+
+      const linkElement = document.createElement('p');
+
+
+
+      linkElement.href = 'https://en.wikipedia.org/wiki/' + externallinks;
+      linkElement.innerText = externallinks;
+
+      const liElement = document.createElement('li');
+      liElement.appendChild(linkElement);
+
+      linksElement.appendChild(liElement);
+      break;
+    }
+
+
+}
+
+
+async function loadLanguages(langLinks){
+
+  const linksElement = document.getElementById('languages');
+
+    for (const lang of langLinks) {
+
+        const linkElement = document.createElement('p');
+
+        linkElement.innerText = lang.langname;
+
+        const liElement = document.createElement('li');
+        liElement.appendChild(linkElement);
+
+        linksElement.appendChild(liElement);
+
+      }
+
+
+
+
+}
+
+
