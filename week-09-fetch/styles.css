@@ -8,21 +8,28 @@
   width: 100px;
 }
 
+
+
 h1{
 font-family: 'Send Flowers', cursive;
   color: rebeccapurple;
   text-align: center;
   letter-spacing: 3vw;
+  text-decoration: underline;
+
 }
 
 h2{
 font-family: 'Rubik', sans-serif;
+  text-align: center;
   color: darkblue;
+  text-decoration: underline;
 
 }
 
 p{
   font-family: 'Rubik', sans-serif;
+    text-align: center;
   color: purple;
   text-align: center;
 }
