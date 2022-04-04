@@ -74,7 +74,7 @@ async function loadExternal(externallinks){
       liElement.appendChild(linkElement);
 
       linksElement.appendChild(liElement);
-      break;
+
     }
 
 
