@@ -1,20 +1,22 @@
+// QUESTIONS
+
 const questions = [
   {
-    "question": "Age range?",
-    "answer1": "under 18",
+    "question": "What genre of music do you like to listen to?",
+    "answer1": "Pop",
     "answer1Total": "1",
-    "answer2": "18 - 30",
+    "answer2": "Rock",
     "answer2Total": "2",
-    "answer3": "over 30",
+    "answer3": "R&B",
     "answer3Total": "3"
   },
   {
-    "question": "I am very imaginative.",
-    "answer1": "Agree",
+    "question": "What's your favorite color?",
+    "answer1": "Blue",
     "answer1Total": "1",
-    "answer2": "Neutral",
+    "answer2": "green",
     "answer2Total": "2",
-    "answer3": "Disagree",
+    "answer3": "black",
     "answer3Total": "3"
   },
   {
