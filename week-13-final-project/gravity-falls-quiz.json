@@ -1,0 +1,221 @@
+{
+    "quizTitle" : "Which <em>Gravity Falls<\/em> character are you?",
+    "outcomes" : {
+        "Wendy" : {
+            "imgUrl" : "./assets/ally-wendy.png",
+            "text" : "You got Wendy!",
+            "description" : "Like Wendy you are mellow, down-to-earth, fun-loving and slightly lethargic. In life, you generally maintain a positive outlook, and through any adventures with your friends, you're always there to be helpful and very understanding. Simply put, a badass who is always down to hang out or help out their friends."
+        },
+        "Stan" : {
+            "imgUrl" : "./assets/ally-stan.png",
+            "text" : "You got Grunkle Stan!",
+            "description" : "At first sight you seem like a cunning salesman with a penchant for greed and selfishness. However, like Stan, you're redeemed by a deep sense of family loyalty and blunt honesty when it comes to telling others what you truly think. Lastly, because you're willing to protect your loved ones at all cost you are everyone's favorite Grunkle."
+        },
+        "Mabel" : {
+            "imgUrl" : "./assets/ally-mabel.png",
+            "text" : "You got Mabel!",
+            "description" : "Like Mabel, you are fun, energetic, bouncy, enthusiastic and free-spirited. You're an optimist who skips through life with a big smile on and an assortment of extremely colorful knit sweaters. Your high self-esteem, outgoing personality, and fearless curiosity also comes in handy when dealing with high-stakes dilemmas. However despite all of this, you are still vulnerable to getting your feelings hurt by those who don't have your best intentions at heart." 
+        },
+        "Dipper" : {
+            "imgUrl" : "./assets/ally-dipper.png",
+            "text" : "You got Dipper!",
+            "description" : "Intelligent, compassionate, self-conscious, rational, and sometimes overly judgemental, you are wise beyond your years. Additionally, you are a born problem-solver always looking for the next problem to solve for the good of humanity. Oftentimes however, in the overzealous pursuit of your goals you can come off as ruthless and way too serious."
+        },
+        "Soos" : {
+            "imgUrl" : "./assets/ally-soos.png",
+            "text" : "You got Soos!",
+            "description" : "Like Soos, you have a humorous, eager, inquisitive, and sometimes childish nature that you can quickly switch off when faced with danger. You love playing video games in your spare time, but when life gets exciting, you have a desire to be where the action is &mdash; thus, making you an excellent resource in any situation."
+        },
+        "Gideon" : {
+            "imgUrl" : "./assets/ally-gideon.png",
+            "text" : "You got 'Lil Gideon!",
+            "description" : "Like 'Lil Gideon, you tend to be a competitive person who doesn't view using personal advantages (e.g. appearance, money, etc.) to make others do your bidding as a dirty deed. However, despite your cunning and slightly evil tendencies, deep down you really are a good person just trying to cope with the pains and sorrows of reality."
+        }
+    },
+    "questions" : [
+        {
+            "questionTitle" : "Pick your favorite food.",
+            "backgroundImage" : "./assets/question-image-1.gif",
+            "responseOptions" : [
+                {
+                    "imgUrl" : "./assets/food-country-fried-steak.jpg",
+                    "caption" : "country fried steak",
+                    "pointsFor" : "Gideon"
+                },
+                {
+                    "imgUrl" : "./assets/food-chips.jpg",
+                    "caption" : "potato chips",
+                    "pointsFor" : "Dipper"
+                },
+                {
+                    "imgUrl" : "./assets/food-pancakes.jpg",
+                    "caption" : "pancakes",
+                    "pointsFor" : "Wendy"
+                },
+                {
+                    "imgUrl" : "./assets/food-oreo-stuffed-sugar-cookies.jpg",
+                    "caption" : "oreo stuffed sugar cookies",
+                    "pointsFor" : "Mabel"
+                },
+                {
+                    "imgUrl" : "./assets/food-beef-enchiladas.jpg",
+                    "caption" : "enchiladas",
+                    "pointsFor" : "Soos"
+                },
+                {
+                    "imgUrl" : "./assets/food-tv-dinner.jpg",
+                    "caption" : "tv dinner",
+                    "pointsFor" : "Stan"
+                }
+            ]
+        },
+
+        {
+            "questionTitle" : "Pick a color.",
+            "backgroundImage" : "./assets/question-image-2.png",
+            "responseOptions" : [
+                {
+                    "imgUrl" : "./assets/color-forest-green.png",
+                    "caption" : "forest green",
+                    "pointsFor" : "Wendy"
+                },
+                {
+                    "imgUrl" : "./assets/color-maroon.png",
+                    "caption" : "maroon",
+                    "pointsFor" : "Stan"
+                },
+                {
+                    "imgUrl" : "./assets/color-baby-blue.png",
+                    "caption" : "baby blue",
+                    "pointsFor" : "Gideon"
+                },
+                {
+                    "imgUrl" : "./assets/color-sasquatch-socks.png",
+                    "caption" : "sasquatch socks",
+                    "pointsFor" : "Mabel"
+                },
+                {
+                    "imgUrl" : "./assets/color-bright-navy-blue.png",
+                    "caption" : "bright navy blue",
+                    "pointsFor" : "Dipper"
+                },
+                {
+                    "imgUrl" : "./assets/color-orange-soda.png",
+                    "caption" : "orange soda",
+                    "pointsFor" : "Soos"
+                }
+            ]
+        },
+
+        {
+            "questionTitle" : "Pick a hobby that appeals to you.",
+            "backgroundImage" : "./assets/question-image-3.gif",
+            "responseOptions" : [
+                {
+                    "imgUrl" : "./assets/hobby-beauty-pageant.jpg",
+                    "caption" : "child beauty pageants",
+                    "pointsFor" : "Gideon"
+                },
+                {
+                    "imgUrl" : "./assets/hobby-fishing.jpg",
+                    "caption" : "fishing",
+                    "pointsFor" : "Stan"
+                },
+                {
+                    "imgUrl" : "./assets/hobby-axe-throwing.jpg",
+                    "caption" : "throwing axes",
+                    "pointsFor" : "Wendy"
+                },
+                {
+                    "imgUrl" : "./assets/hobby-playing-video-games.jpg",
+                    "caption" : "playing video games",
+                    "pointsFor" : "Soos"
+                },
+                {
+                    "imgUrl" : "./assets/hobby-tea-party.jpg",
+                    "caption" : "tea parties with girlfriends",
+                    "pointsFor" : "Mabel"
+                },
+                {
+                    "imgUrl" : "./assets/hobby-reading.jpg",
+                    "caption" : "reading mystery novels",
+                    "pointsFor" : "Dipper"
+                }
+            ]
+        },
+
+        {
+            "questionTitle" : "Pick an animal.",
+            "backgroundImage" : "./assets/question-image-4.gif",
+            "responseOptions" : [
+                {
+                    "imgUrl" : "./assets/animal-dog.jpg",
+                    "caption" : "dog",
+                    "pointsFor" : "Stan"
+                },
+                {
+                    "imgUrl" : "./assets/animal-hamster.jpg",
+                    "caption" : "hamster",
+                    "pointsFor" : "Soos"
+                },
+                {
+                    "imgUrl" : "./assets/animal-slow-loris.jpg",
+                    "caption" : "slow loris",
+                    "pointsFor" : "Gideon"
+                },
+                {
+                    "imgUrl" : "./assets/animal-elephant.jpg",
+                    "caption" : "elephant",
+                    "pointsFor" : "Dipper"
+                },
+                {
+                    "imgUrl" : "./assets/animal-gazelle.jpg",
+                    "caption" : "gazelle",
+                    "pointsFor" : "Wendy"
+                },
+                {
+                    "imgUrl" : "./assets/animal-unicorn.jpg",
+                    "caption" : "unicorn",
+                    "pointsFor" : "Mabel"
+                }
+            ]
+        },
+
+        {
+            "questionTitle" : "Pick an ally.",
+            "backgroundImage" : "./assets/question-image-5.png",
+            "responseOptions" : [
+                {
+                    "imgUrl" : "./assets/ally-robbie.png",
+                    "caption" : "Robbie Valentino",
+                    "pointsFor" : "Wendy"
+                },
+                {
+                    "imgUrl" : "./assets/ally-mabel.png",
+                    "caption" : "Mabel Pines",
+                    "pointsFor" : "Gideon"
+                },
+                {
+                    "imgUrl" : "./assets/ally-ford.jpg",
+                    "caption" : "Ford Pines",
+                    "pointsFor" : "Stan"
+                },
+                {
+                    "imgUrl" : "./assets/ally-wendy.png",
+                    "caption" : "Wendy",
+                    "pointsFor" : "Dipper"
+                },
+                {
+                    "imgUrl" : "./assets/ally-dipper.png",
+                    "caption" : "Dipper Pines",
+                    "pointsFor" : "Mabel"
+                },
+                {
+                    "imgUrl" : "./assets/ally-abuelita.png",
+                    "caption" : "Abuelita",
+                    "pointsFor" : "Soos"
+                }
+            ]
+        }
+    ]
+}
