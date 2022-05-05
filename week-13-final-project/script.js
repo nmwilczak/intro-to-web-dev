@@ -2,71 +2,85 @@
 
 const questions = [
   {
-    "question": "What genre of music do you like to listen to?",
+    "question": "What genre of music do you typically to listen to?",
     "answer1": "Pop",
     "answer1Total": "1",
     "answer2": "Rock",
     "answer2Total": "2",
     "answer3": "R&B",
     "answer3Total": "3"
+        "answer3": "",
+    "answer3Total": "3"
   },
   {
-    "question": "What's your favorite color?",
+    "question": "Pick a color",
     "answer1": "Blue",
     "answer1Total": "1",
-    "answer2": "green",
+    "answer2": "Green",
     "answer2Total": "2",
-    "answer3": "black",
+    "answer3": "Black",
+    "answer3Total": "3"
+        "answer3": "Red",
     "answer3Total": "3"
   },
   {
     "question":
-      "Select in which order you would value these \"Money, Love & Career",
-    "answer1": "Love, Career, Money",
+      "Pick an emotion",
+    "answer1": "Happy",
     "answer1Total": "1",
-    "answer2": "Money, Career, Love",
+    "answer2": "Sad",
     "answer2Total": "3",
-    "answer3": "Career, Love, Money",
+    "answer3": "Angry",
     "answer3Total": "2"
+        "answer3": "Silly",
+    "answer3Total": "3"
   },
   {
-    "question": "Best Sentence to describe you?",
-    "answer1": "You feel superior to other people.",
+    "question": "Pick a Sanrio Character",
+    "answer1": "Kuromi",
     "answer1Total": "3",
-    "answer2": "You consider yourself more practical than creative.",
+    "answer2": "Hello Kitty",
     "answer2Total": "2",
     "answer3":
-      "Winning a debate matters less to you than making sure no one gets upset.",
+      "My Melody",
     "answer3Total": "1"
+        "answer3": "Gudetama",
+    "answer3Total": "3"
   },
   {
-    "question": "Which best describes your relationship with food",
-    "answer1": "You tend to over-eat when you have company.",
+    "question": "Pick a season",
+    "answer1": "Spring",
     "answer1Total": "1",
-    "answer2": "You tend to eat snacks secretly.",
+    "answer2": "Summer",
     "answer2Total": "2",
-    "answer3": "You prepare food and don\’t even look at the recipe.",
+    "answer3": "Fall",
+    "answer3Total": "3"
+        "answer3": "Winter",
     "answer3Total": "3"
   },
   {
     "question":
-      "You make plans with a friend and they cancel on you, what do you do?",
+      "Pick your favorite iconic 2000s cartoon",
     "answer1":
-      "Say \"whatever\" and plan a night that'll be GREAT so they don't cancel again.",
+      "Teen Titans",
     "answer1Total": "3",
-    "answer2": "Feel hurt because you were looking forward to tonight.",
+    "answer2": "Avatar the last Airbender",
     "answer2Total": "2",
-    "answer3": "No problem, you kinda wanted to stay home anyway.",
+    "answer3": "Fairly OddParents",
     "answer3Total": "1"
+        "answer3": "Kim Possible",
+    "answer3Total": "3"
   },
   {
-    "question": "Which of the following colours do you like most?",
-    "answer1": "Black",
+    "question": "Pick a favorite desert.",
+    "answer1": "Cake",
     "answer1Total": "1",
-    "answer2": "Yellow or light blue",
+    "answer2": "Pie",
     "answer2Total": "2",
-    "answer3": "Red or orange",
+    "answer3": "Ice Cream",
     "answer3Total": "3"
+        "answer3": "R&B",
+    "answer3Total": "Pudding"
   }
 ]
 
@@ -81,6 +95,7 @@ const questionEl = document.querySelector('.question');
 const option1 = document.querySelector('.option1');
 const option2 = document.querySelector('.option2');
 const option3 = document.querySelector('.option3');
+const option4 = document.querySelector('.option4');
 const nextButton = document.querySelector('.next');
 const previousButton = document.querySelector('.previous');
 const restartButton = document.querySelector('.restart');

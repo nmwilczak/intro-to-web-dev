@@ -1,206 +1,195 @@
-/* GLOBAL VARIABLES */
-var quizTable;
-var quizOutcomes;
-var quizData;
-var noPriorSubmit = true;
+const textElement = document.getElementById('text')
+const optionButtonsElement = document.getElementById('option-buttons')
 
-window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
+let state = {}
+
+function startGame() {
+  state = {}
+  showTextNode(1)
 }
 
-$.getJSON("./gravity-falls-quiz.json", function(data) {
-    quizData = data;
-    populateQuiz();
-    populateHeader();
+function showTextNode(textNodeIndex) {
+  const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
+  textElement.innerText = textNode.text
+  while (optionButtonsElement.firstChild) {
+    optionButtonsElement.removeChild(optionButtonsElement.firstChild)
+  }
 
-    // initialize hash map
-    quizTable = new Map();
-    var questions = data["questions"];
-    var responseOptions = data["questions"][0]["responseOptions"];
-    for (var i = 0; i < questions.length; i++) {
-        for (var j = 0; j < responseOptions.length; j++) {
-            var key = data["questions"][i]["responseOptions"][j]["caption"];
-            var value = data["questions"][i]["responseOptions"][j]["pointsFor"];
-            quizTable.set(key,value);
-        }
+  textNode.options.forEach(option => {
+    if (showOption(option)) {
+      const button = document.createElement('button')
+      button.innerText = option.text
+      button.classList.add('btn')
+      button.addEventListener('click', () => selectOption(option))
+      optionButtonsElement.appendChild(button)
     }
-
-    // initialize map of outcomes -- an outcome
-    // is key-value pair -- see example below:
-    // { key : "Stan", value: "5" }
-    quizOutcomes = new Map();
-    var outcomes = Object.keys(data["outcomes"]);
-    for (var i = 0; i < outcomes.length; i++) {
-        var key = outcomes[i];
-        quizOutcomes.set(key,0);
-    }
-    
-    addSubmitBtn();
-    checkSubmitStatus();
-});
-
-function populateHeader() {
-    $("#quiz-title").html(quizData["quizTitle"]);
-    var questions = quizData["questions"];
-    for (var i = 1; i <= questions.length; i++) {
-        var selector = "#question-" + i;
-        var image = questions[i-1]["backgroundImage"];
-        $(selector).css("background-image", "url(" + image + ")");
-    }
+  })
 }
 
-function populateQuiz() {
-    var numOfQuestions = quizData["questions"].length;
-    for (var i = 0; i < numOfQuestions; i++) {
-        var question = quizData["questions"][i]["questionTitle"];
-        var responseOptions = quizData["questions"][i]["responseOptions"];
-        var numOfResponses = responseOptions.length;
-        var nameValue = "question-" + (i + 1) + "-response";
-        var imageClass= "images-class-" + (i + 1) + "-group";
-        var responseOptionsHTML = "";
-        for (var j = 0; j < numOfResponses; j++) {
-            var imgUrl = responseOptions[j]["imgUrl"];
-            var caption = responseOptions[j]["caption"];
-            responseOptionsHTML += "<label>" +
-                                        "<div class='image-container'>" +
-                                            "<img class='" + imageClass + "'" +
-                                                " src='" + imgUrl + "' onmouseover='displayCaption(this)'" +
-                                                                     " onmouseout='hideCaption(this)'" +
-                                                                     " onmouseleave='checkSubmitStatus()'" +
-                                                                     " onclick='toggleCheckedClass(this)' />" +
-                                            "<p class='image-caption'>" + caption + "</p>" +
-                                            "<p class='checked-image-caption'>" + caption + "</p>" +
-                                            "<input type='radio'" +
-                                                  " value='" + caption + "'" + 
-                                                  " name='" + nameValue + "' />" +
-                                        "</div>" + 
-                                   "</label>";    
-        }
-        if (responseOptionsHTML) {
-            $("body").append("<div class='question-container'>" +
-                                "<div class='question' id='" + "question-" + (i + 1) + "'>" +
-                                    "<h3 class='question-label'>" +
-                                        "Question " + (i + 1) + "/" + numOfQuestions +
-                                    "</h3>" +
-                                    "<h3 class='question-statement'>" + question + "</h3>" +
-                                "</div>" +    
-                                "<div class='options-grid'>" +
-                                    responseOptionsHTML +
-                                "</div>" +
-                            "</div>");
-        }
-    }
+function showOption(option) {
+  return option.requiredState == null || option.requiredState(state)
 }
 
-function displayCaption(image) {
-    var caption = image.nextSibling;
-    caption.style.display = "block";
-    caption.style.pointerEvents = 'none';
+function selectOption(option) {
+  const nextTextNodeId = option.nextText
+  if (nextTextNodeId <= 0) {
+    return startGame()
+  }
+  state = Object.assign(state, option.setState)
+  showTextNode(nextTextNodeId)
 }
 
-function hideCaption(image) {
-    var caption = image.nextSibling;
-    caption.style.display = "none";
-}
+const textNodes = [
+  {
+    id: 1,
+    text: 'Pick a genre.',
+    options: [
+      {
+        text: 'Pop',
+        setState: { firstPop: true },
+        nextText: 2
+      },
+      {
+        text: 'Leave the goo',
+        nextText: 2
+      }
+    ]
+  },
+  {
+    id: 2,
+    text: 'You venture forth in search of answers to where you are when you come across a merchant.',
+    options: [
+      {
+        text: 'Trade the goo for a sword',
+        requiredState: (currentState) => currentState.firstPop,
+        setState: { firstPop: false, sword: true },
+        nextText: 3
+      },
+      {
+        text: 'Trade the goo for a shield',
+        requiredState: (currentState) => currentState.firstPop,
+        setState: { firstPop: false, shield: true },
+        nextText: 3
+      },
+      {
+        text: 'Ignore the merchant',
+        nextText: 3
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: 'After leaving the merchant you start to feel tired and stumble upon a small town next to a dangerous looking castle.',
+    options: [
+      {
+        text: 'Explore the castle',
+        nextText: 4
+      },
+      {
+        text: 'Find a room to sleep at in the town',
+        nextText: 5
+      },
+      {
+        text: 'Find some hay in a stable to sleep in',
+        nextText: 6
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: 'You are so tired that you fall asleep while exploring the castle and are killed by some terrible monster in your sleep.',
+    options: [
+      {
+        text: 'Restart',
+        nextText: -1
+      }
+    ]
+  },
+  {
+    id: 5,
+    text: 'Without any money to buy a room you break into the nearest inn and fall asleep. After a few hours of sleep the owner of the inn finds you and has the town guard lock you in a cell.',
+    options: [
+      {
+        text: 'Restart',
+        nextText: -1
+      }
+    ]
+  },
+  {
+    id: 6,
+    text: 'You wake up well rested and full of energy ready to explore the nearby castle.',
+    options: [
+      {
+        text: 'Explore the castle',
+        nextText: 7
+      }
+    ]
+  },
+  {
+    id: 7,
+    text: 'While exploring the castle you come across a horrible monster in your path.',
+    options: [
+      {
+        text: 'Try to run',
+        nextText: 8
+      },
+      {
+        text: 'Attack it with your sword',
+        requiredState: (currentState) => currentState.sword,
+        nextText: 9
+      },
+      {
+        text: 'Hide behind your shield',
+        requiredState: (currentState) => currentState.shield,
+        nextText: 10
+      },
+      {
+        text: 'Throw the blue goo at it',
+        requiredState: (currentState) => currentState.firstPop,
+        nextText: 11
+      }
+    ]
+  },
+  {
+    id: 8,
+    text: 'Your attempts to run are in vain and the monster easily catches.',
+    options: [
+      {
+        text: 'Restart',
+        nextText: -1
+      }
+    ]
+  },
+  {
+    id: 9,
+    text: 'You foolishly thought this monster could be slain with a single sword.',
+    options: [
+      {
+        text: 'Restart',
+        nextText: -1
+      }
+    ]
+  },
+  {
+    id: 10,
+    text: 'The monster laughed as you hid behind your shield and ate you.',
+    options: [
+      {
+        text: 'Restart',
+        nextText: -1
+      }
+    ]
+  },
+  {
+    id: 11,
+    text: 'You threw your jar of goo at the monster and it exploded. After the dust settled you saw the monster was destroyed. Seeing your victory you decide to claim this castle as your and live out the rest of your days there.',
+    options: [
+      {
+        text: 'Congratulations. Play Again.',
+        nextText: -1
+      }
+    ]
+  }
+]
 
-function toggleCheckedClass(image) {
-    var imageClassName = image.classList.item(0);
-    var imageClassArray = document.getElementsByClassName(imageClassName);
-    
-    for (var i = 0 ; i < imageClassArray.length; i++) {
-        var currImageElement = imageClassArray[i];
-        if (currImageElement.classList.contains("checked")) {
-            currImageElement.classList.remove("checked");
-            currImageElement.nextSibling.nextSibling.style.display = "none";
-        }
-    }
-
-    image.classList.add("checked");
-    var checkedImageArray = document.getElementsByClassName("checked");
-    for (var i = 0; i < checkedImageArray.length; i++) {
-        var currCheckedImageElement = checkedImageArray[i];
-        var secondCaption = currCheckedImageElement.nextElementSibling.nextElementSibling;
-        secondCaption.style.display = "block";
-    }
-}
-
-function checkSubmitStatus() {
-    var choices = $("input[type='radio']:checked").map(function(i, radio) {
-        return $(radio).val();
-    }).toArray();
-
-    var numOfQuestions = quizData["questions"].length;
-
-    if (choices.length == numOfQuestions) {
-        $("#btn-submit-quiz").css("pointer-events","auto");
-    } else {
-        $("#btn-submit-quiz").css("pointer-events","none");
-    }
-}
-
-function addSubmitBtn() {
-    $("body").append("<button onclick='submitQuiz()' id='btn-submit-quiz'>Submit Quiz</button>");
-}
-
-function showResults(outcome) {
-    if (noPriorSubmit) {
-        var quizTitle = quizData["quizTitle"];
-        var quizOutcome = quizData["outcomes"][outcome]["text"];
-        var quizOutcomeImage = quizData["outcomes"][outcome]["imgUrl"];
-        var quizOutcomeDescription = quizData["outcomes"][outcome]["description"];
-        $("body").append(
-            "<div id='results-container'>" +
-                "<div id='results-top-labeling'>" +
-                    "<span id='results-top-labeling-left'>" +
-                        "<i class='fa fa-arrow-circle-up'></i>" +
-                        "<span id='results-quiz-title'>" + quizTitle + "</span>" +
-                    "</span>" +
-                    "<span id='results-top-labeling-right'>" +    
-                        "<i onclick='refreshPage()' class='fa fa-refresh'></i>" +
-                        "<span onclick='refreshPage()' id='btn-retake-quiz'>Retake Quiz</span>" +
-                    "</span>" +    
-                "</div>" +
-                "<div id='results-bottom-content'>" + 
-                    "<div id='results-bottom-left'>" + 
-                        "<h4 id='results'>" + quizOutcome + "</h4>" +
-                        "<p id='results-description'>" + quizOutcomeDescription + "</p>" +
-                    "</div>" +
-                    "<div id='results-bottom-right'>" +
-                        "<img id='results-image' src='" + quizOutcomeImage + "'/>" +
-                    "</div>" +
-                "</div>" + 
-            "</div>");
-        noPriorSubmit = false;
-    }
-}
-
-function refreshPage() {
-    location.reload();
-}
-
-function submitQuiz() {
-    var choices = $("input[type='radio']:checked").map(function(i, radio) {
-        return $(radio).val();
-    }).toArray();
-
-    // tally the results
-    for (var i = 0; i < choices.length; i++) {
-        var key = quizTable.get(choices[i]);
-        if (quizOutcomes.has(key)) {
-            var value = quizOutcomes.get(key) + 1;
-            quizOutcomes.set(key,value);
-        }
-    }
-
-    // find the outcome
-    var max = -1;
-    var outcome;
-    for (var [key,value] of quizOutcomes.entries()) {
-        if (value > max) {
-            max = value;
-            outcome = key;
-        }
-    }
-
-    showResults(outcome);
-}
+startGame()

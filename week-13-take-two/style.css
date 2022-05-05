@@ -1,179 +1,44 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: Gotham Rounded;
+}
+
 body {
-  font-family: "Nunito Sans", sans-serif;
-  width: 80%;
-  margin: 60px auto;
-}
-
-#page-title h2 {
+  padding: 0;
   margin: 0;
-}
-#page-title #site-title {
-  font-size: 38px;
-  display: inline-flex;
-}
-#page-title i {
-  margin-top: 20px;
-  margin-left: 8px;
-  color: orange;
-}
-
-#quiz-title {
-  font-size: 32px;
-  margin-top: -2px;
-}
-
-.question-container {
-  width: 696px;
-  border: 1px solid lightgray;
-  border-radius: 8px;
-  margin-bottom: 40px;
-}
-.question-container .question {
-  background-repeat: no-repeat;
-  background-size: 130px;
-  background-position-x: 98%;
-  border-radius: 6px 6px 0 0;
-  border-bottom: 1px solid lightgray;
-}
-.question-container .question h3 {
-  margin: 0;
-  padding-left: 16px;
-}
-.question-container .question .question-label {
-  padding-top: 30px;
-  padding-bottom: 0;
-  font-size: 18px;
-}
-.question-container .question .question-statement {
-  padding-top: 6px;
-  padding-bottom: 28px;
-  font-size: 26px;
-}
-.question-container .options-grid {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.question-container .options-grid .image-container {
-  background-color: orange;
-  width: 200px;
-  height: 200px;
-  margin: 16px;
-  position: relative;
-  border-radius: 8px;
-}
-.question-container .options-grid .image-container img {
-  width: 200px;
-  height: 200px;
-  margin: 0;
-  border-radius: 8px;
-}
-.question-container .options-grid .image-container img:hover, .question-container .options-grid .image-container .checked {
-  opacity: 0.1;
-  filter: grayscale(100%);
-  cursor: pointer;
-}
-.question-container .options-grid .image-container p {
-  color: white;
-  margin: 0 auto;
-  text-align: center;
-  position: absolute;
-  top: 40%;
-  left: 20%;
-  width: 120px;
-  display: none;
-}
-.question-container .options-grid .image-container input[type=radio] {
-  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #333;
 }
 
-#btn-submit-quiz {
-  background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
-  border: none;
-  border-radius: 8px;
-  color: white;
-  cursor: pointer;
-  filter: grayscale(50%);
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 24px;
-  font-weight: bolder;
-  letter-spacing: 0.8px;
-  margin: 0 auto;
-  margin-top: -20px;
-  outline: none;
-  padding: auto;
-  width: 696px;
-  height: 60px;
-}
-
-#btn-submit-quiz:hover {
-  filter: grayscale(0%);
-}
-
-#results-container {
-  background-color: orange;
-  border-radius: 8px;
-  margin-top: 20px;
-  height: 380px;
-  width: 696px;
-  z-index: 0;
-  position: relative;
-}
-#results-container #results-top-labeling {
-  color: white;
-  z-index: 1000;
-}
-#results-container #results-top-labeling #results-top-labeling-left {
-  position: relative;
-  top: 24px;
-  left: 24px;
-}
-#results-container #results-top-labeling #results-top-labeling-right {
-  cursor: pointer;
-  position: absolute;
-  top: 24px;
-  right: 32px;
-}
-#results-container #results-top-labeling #results-top-labeling-right .fa-refresh {
-  transition: transform 2s ease-out;
-}
-#results-container #results-top-labeling #results-top-labeling-right .fa-refresh:hover {
-  transform: rotate(360deg);
-  transition: transform 2s ease-in;
-}
-#results-container #results-top-labeling .fa {
-  margin: 0 8px;
-}
-#results-container #results-bottom-content {
-  display: flex;
-  flex-direction: row;
+.container {
+  width: 800px;
+  max-width: 80%;
   background-color: white;
-  border-radius: 8px;
-  margin: 20px auto;
-  position: relative;
-  top: 24px;
-  width: 640px;
-  height: 286px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 2px;
 }
-#results-container #results-bottom-content #results-bottom-left {
-  width: 300px;
-  margin: 0 auto;
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin-top: 20px;
 }
-#results-container #results-bottom-content #results-bottom-left #results {
-  font-size: 24px;
-  padding: 20px;
-  margin: 4px;
-  text-align: center;
+
+.btn {
+  background-color: hsl(200, 100%, 50%);
+  border: 1px solid hsl(200, 100%, 30%);
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+  outline: none;
 }
-#results-container #results-bottom-content #results-bottom-left #results-description {
-  font-size: 12px;
-  font-weight: 300;
-  margin-top: -12px;
-}
-#results-container #results-bottom-content #results-bottom-right #results-image {
-  position: static;
-  right: 0;
-  border-radius: 0 8px 8px 0;
-  width: 286px;
-  height: 286px;
+
+.btn:hover {
+  border-color: black;
 }
