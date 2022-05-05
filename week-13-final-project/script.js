@@ -2,85 +2,71 @@
 
 const questions = [
   {
-    "question": "What genre of music do you typically to listen to?",
+    "question": "Pick a genre",
     "answer1": "Pop",
     "answer1Total": "1",
     "answer2": "Rock",
     "answer2Total": "2",
     "answer3": "R&B",
     "answer3Total": "3"
-        "answer3": "",
-    "answer3Total": "3"
   },
   {
     "question": "Pick a color",
     "answer1": "Blue",
     "answer1Total": "1",
-    "answer2": "Green",
+    "answer2": "Black",
     "answer2Total": "2",
-    "answer3": "Black",
-    "answer3Total": "3"
-        "answer3": "Red",
+    "answer3": "Red",
     "answer3Total": "3"
   },
   {
     "question":
-      "Pick an emotion",
-    "answer1": "Happy",
+      "Pick a Sanrio character",
+    "answer1": "Hello Kitty",
     "answer1Total": "1",
-    "answer2": "Sad",
+    "answer2": "Kerropi",
     "answer2Total": "3",
-    "answer3": "Angry",
+    "answer3": "My Melody",
     "answer3Total": "2"
-        "answer3": "Silly",
-    "answer3Total": "3"
   },
   {
-    "question": "Pick a Sanrio Character",
-    "answer1": "Kuromi",
-    "answer1Total": "3",
-    "answer2": "Hello Kitty",
-    "answer2Total": "2",
-    "answer3":
-      "My Melody",
-    "answer3Total": "1"
-        "answer3": "Gudetama",
-    "answer3Total": "3"
-  },
-  {
-    "question": "Pick a season",
+    "question": "Pick a season.",
     "answer1": "Spring",
-    "answer1Total": "1",
+    "answer1Total": "3",
     "answer2": "Summer",
     "answer2Total": "2",
-    "answer3": "Fall",
-    "answer3Total": "3"
-        "answer3": "Winter",
-    "answer3Total": "3"
-  },
-  {
-    "question":
-      "Pick your favorite iconic 2000s cartoon",
-    "answer1":
-      "Teen Titans",
-    "answer1Total": "3",
-    "answer2": "Avatar the last Airbender",
-    "answer2Total": "2",
-    "answer3": "Fairly OddParents",
+    "answer3":
+      "Winter",
     "answer3Total": "1"
-        "answer3": "Kim Possible",
-    "answer3Total": "3"
   },
   {
-    "question": "Pick a favorite desert.",
-    "answer1": "Cake",
+    "question": "Pick a desert",
+    "answer1": "Pie",
     "answer1Total": "1",
-    "answer2": "Pie",
+    "answer2": "Cake",
     "answer2Total": "2",
     "answer3": "Ice Cream",
     "answer3Total": "3"
-        "answer3": "R&B",
-    "answer3Total": "Pudding"
+  },
+  {
+    "question":
+      "Pick an animal",
+    "answer1":
+      "Dog",
+    "answer1Total": "3",
+    "answer2": "Bat",
+    "answer2Total": "2",
+    "answer3": "Frog",
+    "answer3Total": "1"
+  },
+  {
+    "question": "Pick an emotion",
+    "answer1": "Happy",
+    "answer1Total": "1",
+    "answer2": "Sad",
+    "answer2Total": "2",
+    "answer3": "Angry",
+    "answer3Total": "3"
   }
 ]
 
@@ -95,7 +81,6 @@ const questionEl = document.querySelector('.question');
 const option1 = document.querySelector('.option1');
 const option2 = document.querySelector('.option2');
 const option3 = document.querySelector('.option3');
-const option4 = document.querySelector('.option4');
 const nextButton = document.querySelector('.next');
 const previousButton = document.querySelector('.previous');
 const restartButton = document.querySelector('.restart');
@@ -153,11 +138,11 @@ function loadNextQuestion () {
          `<h1 class="final-score">Your score: ${totalScore}</h1>
          <div class="summary">
             <h1>Summary</h1>
-            <p>Possible - Personality Traits, see below for a summary based on your results:</p>
-            <p>15 - 21- You Need Help</p>
-            <p>10 - 15 - Good Soul</p>
-            <p>5 - 10 - Meh </p>
-            <p>5 - Are You Even Real</p>
+            <p>Possible - Music Recommendation, see below for a recommendation based on your results:</p>
+            <p>15 - 21- Red Hyunna</p>
+            <p>10 - 15 - Long Flight Taeyong</p>
+            <p>5 - 10 - Call Me Baby Exo </p>
+            <p>5 - Kick It! NCT 127</p>
         </div>
         <button class="restart">Restart Quiz</button>
          `;

@@ -9,10 +9,10 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Arial", sans-serif;
   font-weight: 100;
   line-height: 1.7rem;
-  background: no-repeat linear-gradient(250deg, #ff934f, #db222a);
+  background: no-repeat linear-gradient(250deg, #ACACDE, #C490D1);
 }
 .quiz-container {
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
