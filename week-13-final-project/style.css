@@ -69,10 +69,10 @@ button {
   transition: all 0.2s;
 }
 button.previous {
-  background: #c84630;
+  background: #587291;
 }
 button.next {
-  background: #3c91e6;
+  background: #60A561;
 }
 button.restart {
   background: #0cf574;

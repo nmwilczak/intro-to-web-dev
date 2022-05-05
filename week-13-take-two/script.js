@@ -50,7 +50,7 @@ const textNodes = [
         nextText: 2
       },
       {
-        text: 'Leave the goo',
+        text: 'Rock',
         nextText: 2
       }
     ]
