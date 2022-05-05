@@ -1,5 +1,7 @@
 // QUESTIONS
 
+
+
 const questions = [
   {
     "question": "Pick a genre",
@@ -178,3 +180,6 @@ generateQuestions(currentQuestion);
 nextButton.addEventListener('click', loadNextQuestion);
 previousButton.addEventListener('click',loadPreviousQuestion);
 result.addEventListener('click',restartQuiz);
+
+
+
